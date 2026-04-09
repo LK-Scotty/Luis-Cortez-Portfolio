@@ -21,7 +21,13 @@
 html {
   scroll-behavior: smooth;
 }
-
+.my-pic{
+  width: 290px;
+  float: right;
+  margin-right: 4%;
+  margin-top: -380px;
+  border-radius: 50%;
+}
 body {
   margin: 0;
   background: var(--background);

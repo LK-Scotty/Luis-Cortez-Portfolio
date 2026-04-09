@@ -587,7 +587,7 @@ body.menu-open .nav-mobile {
 }
 
 /* RESPONSIVE */
-@media (min-width: 768px) {
+@media screen and (max-width: 767px) {
   .my-pic{
     width: 142px;
     float: left;
@@ -596,6 +596,12 @@ body.menu-open .nav-mobile {
     transform: translateX(-50%);
     border: 6px double #fa1e4e;
   }
+  .hero{
+    min-height: 77vh;
+    padding-bottom: 0;
+  }
+}
+@media (min-width: 768px) {
   .section,
   .hero {
     padding-left: 48px;

@@ -77,4 +77,37 @@
     initSmoothScroll();
     initScrollAnimations();
   });
+
+$('body').append(`
+    <div id="lbx-overlay" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.72);align-items:center;justify-content:center;">
+      <div style="position:relative;max-width:min(90vw,900px);animation:lbxIn .18s ease;">
+        <div id="lbx-close" style="position:absolute;top:6px;right:6px;width:24px;height:24px;border-radius:50%;background:hsl(347, 96%, 55%);border:1px solid #ddd;font-size:16px;line-height:23px;text-align:center;cursor:pointer;">&#x2715;</div>
+        <img id="lbx-img" src="" alt="" style="display:block;max-width:100%;max-height:82vh;border-radius:12px;">
+      </div>
+    </div>
+    <style>@keyframes lbxIn { from{opacity:0;transform:scale(.94)} to{opacity:1;transform:scale(1)} }</style>
+  `);
+
+  // Open on thumbnail click
+  $(document).on('click', '.prev-img-cont', function () {
+    const src = $(this).find('img').attr('src');
+    if (!src) return;
+    $('#lbx-img').attr('src', src);
+    $('#lbx-overlay').css('display', 'flex');
+  });
+
+  // Close on ✕, backdrop click, or Escape
+  $(document).on('click', '#lbx-close', closeLbx);
+  $(document).on('click', '#lbx-overlay', function (e) {
+    if ($(e.target).is('#lbx-overlay')) closeLbx();
+  });
+  $(document).on('keydown', function (e) {
+    if (e.key === 'Escape') closeLbx();
+  });
+
+  function closeLbx() {
+    $('#lbx-overlay').css('display', 'none');
+    $('#lbx-img').attr('src', '');
+  }
+
 })();

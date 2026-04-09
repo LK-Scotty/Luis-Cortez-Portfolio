@@ -104,6 +104,42 @@ a {
   letter-spacing: -0.02em;
 }
 
+.cta span{
+  transition: 0.2s ease;
+}
+.cta:hover span{
+  translate: 2px -2px;
+}
+.project-arrow a{
+  transition: 0.2s ease;
+}
+.project-arrow a:hover{
+  letter-spacing: 1px;
+}
+
+.prev-img-cont{
+  width: 42px;
+  height: 42px;
+  border: 2px hsl(347, 96%, 55%) solid;
+  border-radius: 3px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: 0.2s ease;
+  float: left;
+  margin-right: 10px;
+}
+
+  @keyframes lbxIn { from{opacity:0;transform:scale(.94)} to{opacity:1;transform:scale(1)} }
+  .prev-img-cont { cursor: zoom-in; }
+
+.prev-img-cont:hover{
+  transform: scale(1.1);
+  border-radius: 8px;
+}
+.prev-img-cont img{
+  height: 100%;
+}
+
 .brand-dot {
   color: var(--primary);
 }

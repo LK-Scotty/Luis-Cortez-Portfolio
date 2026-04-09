@@ -588,6 +588,14 @@ body.menu-open .nav-mobile {
 
 /* RESPONSIVE */
 @media (min-width: 768px) {
+  .my-pic{
+    width: 142px;
+    float: left;
+    margin-top: -480px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    border: 6px double #fa1e4e;
+  }
   .section,
   .hero {
     padding-left: 48px;
